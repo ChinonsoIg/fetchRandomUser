@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import FetchDog from './doggo';
 
-function App() {
+function NavBar() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="navwrapper">
+      <div className="navbar">
+        <div className="heading">
+          <h1>This is My React Doggo App</h1>
+          <h3>Want to buy dog? But finding it difficult to make a choice, flip through these pictures and pick one! <br /><br />Good Luck!!</h3>
+        </div>
+        <div className="search">
+          <input type="text" placeholder="Search" />
+          <button id="fetch">Fetch</button>
+        </div>
+      </div>
     </div>
   );
+}
+
+function DisplayArea() {
+  return (
+    <div>
+      <FetchDog />
+    </div>
+  );
+}
+
+class App extends Component {
+  render() {
+    return(
+      <div>
+        <NavBar />
+        <DisplayArea />
+      </div>
+    )
+  }
 }
 
 export default App;
